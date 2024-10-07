@@ -4,11 +4,11 @@ import java.util.List;
 
 public class Rezervace {
 
-    List<Hoste> seznamHostu = new ArrayList<>();
-    Pokoje pokoje;
-    LocalDate zacatekRezervace;
-    LocalDate konecRezervace;
-    String typPobytu;
+    private List<Hoste> seznamHostu = new ArrayList<>();
+    private Pokoje pokoje;
+    private LocalDate zacatekRezervace;
+    private LocalDate konecRezervace;
+    private String typPobytu;
 
     public Rezervace(List<Hoste> seznamHostu, Pokoje pokoje, LocalDate zacatekRezervace, LocalDate konecRezervace, String typPobytu) {
         this.seznamHostu = seznamHostu;
