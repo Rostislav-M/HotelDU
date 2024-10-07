@@ -5,7 +5,11 @@ public class Hoste {
     private String prijmeni;
     private LocalDate datumNarozeni;
 
-
+    public Hoste(String jmeno, String prijmeni, LocalDate datumNarozeni) {
+        this.jmeno = jmeno;
+        this.prijmeni = prijmeni;
+        this.datumNarozeni = datumNarozeni;
+    }
     public String getJmeno() {
         return jmeno;
     }
@@ -20,13 +24,6 @@ public class Hoste {
 
     public void setPrijmeni(String prijmeni) {
         this.prijmeni = prijmeni;
-    }
-
-
-    public Hoste(String jmeno, String prijmeni, LocalDate datumNarozeni) {
-        this.jmeno = jmeno;
-        this.prijmeni = prijmeni;
-        this.datumNarozeni = datumNarozeni;
     }
 
     public LocalDate getDatumNarozeni() {
