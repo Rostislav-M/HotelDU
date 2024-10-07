@@ -7,13 +7,12 @@ public class Pokoje {
     private double cenaPokoje;
 
     public Pokoje(int cisloPokoje,int pocetLuzek, boolean jeVyhledNaMore, boolean jeBalkon, double cenaPokoje) {
-        this.cisloPokoje= cisloPokoje;
+        this.cisloPokoje = cisloPokoje;
         this.pocetLuzek = pocetLuzek;
         this.jeVyhledNaMore = jeVyhledNaMore;
         this.jeBalkon = jeBalkon;
         this.cenaPokoje = cenaPokoje;
     }
-
 
     public int getPocetLuzek() {
         return pocetLuzek;

@@ -33,8 +33,6 @@ public class Hoste {
     public void setDatumNarozeni(LocalDate datumNarozeni) {
         this.datumNarozeni = datumNarozeni;
     }
-
-
     //Převede objekt na řetězec
     @Override
     public String toString() {
