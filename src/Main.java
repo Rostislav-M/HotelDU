@@ -39,8 +39,6 @@ public class Main {
         //Pridani rezervace pro Adelu a Jana
         Rezervace rezervace1= new Rezervace(seznamHostu1,pokoj1, LocalDate.of(2021, 7,19), LocalDate.of(2021, 7,26), Rezervace.TypPobytu.PRACOVNI);
         Rezervace rezervace2 = new Rezervace(seznamHostu2,pokoj3, LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9 , 14), Rezervace.TypPobytu.REKREACNI );
-        // Zkus přidat dvě různé rezervace pro jednoho hosta na různé pokoje
-
 
         //Vytvoření správce rezervací
         RezervacniManazer rezervacniManazer = new RezervacniManazer();
@@ -48,8 +46,6 @@ public class Main {
         //Přidání rezervací do správce
         rezervacniManazer.pridaniRezervace(rezervace1);
         rezervacniManazer.pridaniRezervace(rezervace2);
-
-        //Zkus přidat dvě různé rezervace pro jednoho hosta na různé pokoje
 
         //Vypsaní všech rezevací
         rezervacniManazer.vypsaniInformaceOvsechRezervacich();
