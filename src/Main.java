@@ -37,8 +37,8 @@ public class Main {
 
         //Přidání rezervace pro Adelu
         //Pridani rezervace pro Adelu a Jana
-        Rezervace rezervace1= new Rezervace(seznamHostu1,pokoj1, LocalDate.of(2021, 7,19), LocalDate.of(2021, 7,26), Rezervace.TypPobytu.PRACOVNI);
-        Rezervace rezervace2 = new Rezervace(seznamHostu2,pokoj3, LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9 , 14), Rezervace.TypPobytu.REKREACNI );
+        Rezervace rezervace1= new Rezervace(seznamHostu1,pokoj1, LocalDate.of(2021, 7,19), LocalDate.of(2021, 7,26), Rezervace.TypPobytu.REKREACNI);
+        Rezervace rezervace2 = new Rezervace(seznamHostu2,pokoj3, LocalDate.of(2021, 9, 1), LocalDate.of(2021, 9 , 14), Rezervace.TypPobytu.PRACOVNI);
 
         //Vytvoření správce rezervací
         RezervacniManazer rezervacniManazer = new RezervacniManazer();
