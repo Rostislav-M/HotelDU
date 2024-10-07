@@ -8,19 +8,23 @@ public class Rezervace {
     private Pokoje pokoje;
     private LocalDate zacatekRezervace;
     private LocalDate konecRezervace;
-    private String typPobytu;
+    private TypPobytu typPobytu;
 
-    public Rezervace(List<Hoste> seznamHostu, Pokoje pokoje, LocalDate zacatekRezervace, LocalDate konecRezervace, String typPobytu) {
+    enum TypPobytu {
+        PRACOVNI,
+        REKREACNI
+    }
+    public Rezervace(List<Hoste> seznamHostu, Pokoje pokoje, LocalDate zacatekRezervace, LocalDate konecRezervace, TypPobytu typPobytu) {
+        if (seznamHostu== null || seznamHostu.isEmpty())  {
+            throw new IllegalArgumentException("U rezervace musí být registrovaný minimálně jeden host");
+        }
+
         this.seznamHostu = seznamHostu;
         this.pokoje = pokoje;
         this.zacatekRezervace = zacatekRezervace;
         this.konecRezervace = konecRezervace;
+        this.typPobytu = typPobytu;
 
-        if (typPobytu.equals("pracovní") || typPobytu.equals("rekreační")) {
-            this.typPobytu = typPobytu;
-        } else {
-            throw new IllegalArgumentException("Neplatný typ pobytu, typ pobytu musí být pracovní nebo rekreační");
-        }
     }
 
       public Pokoje getPokoje() {
@@ -47,16 +51,14 @@ public class Rezervace {
         this.konecRezervace = konecRezervace;
     }
 
-    public String getTypPobytu() {
+    public TypPobytu getTypPobytu() {
         return typPobytu;
     }
 
-    public void setTypPobytu(String typPobytu) {
-        if (typPobytu.equals("pracovní") || typPobytu.equals("rekreační")){
+    public void setTypPobytu(TypPobytu typPobytu) {
+
             this.typPobytu = typPobytu;
-        } else {
-             throw new IllegalArgumentException("Neplatný typ pobytu, typ pobytu musí být pracovní nebo rekreační");
-        }
+
     }
 
     public List<Hoste> getSeznamHostu() {
