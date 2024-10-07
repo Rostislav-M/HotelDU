@@ -57,9 +57,7 @@ public class Rezervace {
     }
 
     public void setTypPobytu(TypPobytu typPobytu) {
-
-            this.typPobytu = typPobytu;
-
+        this.typPobytu = typPobytu;
     }
 
     public List<Hoste> getSeznamHostu() {
