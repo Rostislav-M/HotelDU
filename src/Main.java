@@ -48,7 +48,7 @@ public class Main {
         //Přidání rezervací do správce
         rezervacniManazer.pridaniRezervace(rezervace1);
         rezervacniManazer.pridaniRezervace(rezervace2);
-;
+
         //Zkus přidat dvě různé rezervace pro jednoho hosta na různé pokoje
 
         //Vypsaní všech rezevací
