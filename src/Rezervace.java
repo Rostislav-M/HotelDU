@@ -10,10 +10,11 @@ public class Rezervace {
     private LocalDate konecRezervace;
     private TypPobytu typPobytu;
 
-    enum TypPobytu {
+    public enum TypPobytu {
         PRACOVNI,
         REKREACNI
     }
+
     public Rezervace(List<Hoste> seznamHostu, Pokoje pokoje, LocalDate zacatekRezervace, LocalDate konecRezervace, TypPobytu typPobytu) {
         if (seznamHostu== null || seznamHostu.isEmpty())  {
             throw new IllegalArgumentException("U rezervace musí být registrovaný minimálně jeden host");
