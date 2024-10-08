@@ -65,6 +65,9 @@ public class Rezervace {
     }
 
     public void setSeznamHostu(List<Hoste> seznamHostu) {
+        if (seznamHostu == null || seznamHostu.isEmpty()) {
+            throw new IllegalArgumentException("Seznam hostů nesmí být null nebo prázdný");
+        }
         this.seznamHostu = seznamHostu;
     }
 }
