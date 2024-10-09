@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Rezervace {
 
-    private List<Hoste> seznamHostu = new ArrayList<>();
-    private Pokoje pokoje;
+    private List<Host> seznamHostu = new ArrayList<>();
+    private Pokoj pokoj;
     private LocalDate zacatekRezervace;
     private LocalDate konecRezervace;
     private TypPobytu typPobytu;
@@ -15,25 +15,25 @@ public class Rezervace {
         REKREACNI
     }
 
-    public Rezervace(List<Hoste> seznamHostu, Pokoje pokoje, LocalDate zacatekRezervace, LocalDate konecRezervace, TypPobytu typPobytu) {
+    public Rezervace(List<Host> seznamHostu, Pokoj pokoj, LocalDate zacatekRezervace, LocalDate konecRezervace, TypPobytu typPobytu) {
         if (seznamHostu== null || seznamHostu.isEmpty())  {
             throw new IllegalArgumentException("U rezervace musí být registrovaný minimálně jeden host");
         }
 
         this.seznamHostu = seznamHostu;
-        this.pokoje = pokoje;
+        this.pokoj = pokoj;
         this.zacatekRezervace = zacatekRezervace;
         this.konecRezervace = konecRezervace;
         this.typPobytu = typPobytu;
 
     }
 
-      public Pokoje getPokoje() {
-        return pokoje;
+      public Pokoj getPokoje() {
+        return pokoj;
     }
 
-    public void setPokoje(Pokoje pokoje) {
-        this.pokoje = pokoje;
+    public void setPokoje(Pokoj pokoj) {
+        this.pokoj = pokoj;
     }
 
     public LocalDate getZacatekRezervace() {
@@ -60,11 +60,11 @@ public class Rezervace {
         this.typPobytu = typPobytu;
     }
 
-    public List<Hoste> getSeznamHostu() {
+    public List<Host> getSeznamHostu() {
         return seznamHostu;
     }
 
-    public void setSeznamHostu(List<Hoste> seznamHostu) {
+    public void setSeznamHostu(List<Host> seznamHostu) {
         if (seznamHostu == null || seznamHostu.isEmpty()) {
             throw new IllegalArgumentException("Seznam hostů nesmí být null nebo prázdný");
         }

@@ -1,4 +1,4 @@
-public class Pokoje {
+public class Pokoj {
 
     private int cisloPokoje;
     private int pocetLuzek;
@@ -6,7 +6,7 @@ public class Pokoje {
     private boolean jeBalkon;
     private double cenaPokoje;
 
-    public Pokoje(int cisloPokoje,int pocetLuzek, boolean jeVyhledNaMore, boolean jeBalkon, double cenaPokoje) {
+    public Pokoj(int cisloPokoje, int pocetLuzek, boolean jeVyhledNaMore, boolean jeBalkon, double cenaPokoje) {
         this.cisloPokoje = cisloPokoje;
         this.pocetLuzek = pocetLuzek;
         this.jeVyhledNaMore = jeVyhledNaMore;

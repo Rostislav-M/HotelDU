@@ -7,8 +7,8 @@ public class Main {
     public static void main(String[] args) {
 
         //vytvoření hostů
-        Hoste host1 = new Hoste("Adéla", "Malíková", LocalDate.of(1993, 3, 13));
-        Hoste host2 = new Hoste("Jan","Dvořáček", LocalDate.of(1995, 5, 5));
+        Host host1 = new Host("Adéla", "Malíková", LocalDate.of(1993, 3, 13));
+        Host host2 = new Host("Jan","Dvořáček", LocalDate.of(1995, 5, 5));
 
         //Změna datumu narození
         host2.setDatumNarozeni(LocalDate.of(1995,4,5));
@@ -18,9 +18,9 @@ public class Main {
         System.out.println(host2.getJmeno() + "  " + host2.getPrijmeni() + " datum narození: " + host2.getDatumNarozeni().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
 
         //Přidání pokojů
-        Pokoje pokoj1 = new Pokoje(1, 1,true, true, 1000.0);
-        Pokoje pokoj2 = new Pokoje(2, 1,true, true, 1000.0);
-        Pokoje pokoj3=  new Pokoje(3, 3,true, false, 2400.0);
+        Pokoj pokoj1 = new Pokoj(1, 1,true, true, 1000.0);
+        Pokoj pokoj2 = new Pokoj(2, 1,true, true, 1000.0);
+        Pokoj pokoj3=  new Pokoj(3, 3,true, false, 2400.0);
 
         //Vypsání pokojů
         System.out.println("Vypsání pokojů: ");
@@ -29,9 +29,9 @@ public class Main {
         System.out.print("Pokoj číslo: " + pokoj3.getCisloPokoje() + " " +  "Má balkon: " + (pokoj3.jeBalkon() ? "ano" : "ne") +  ", " + "Má výhled na moře: " + (pokoj3.jeVyhledNaMore() ? "ano" : "ne") + ", cena pokoje:  " + pokoj3.getCenaPokoje() +"\n" +"\n");
 
         // Vytvoření seznamu hostů a přidání hostů do seznamu
-        List<Hoste> seznamHostu1 = new ArrayList<>();
+        List<Host> seznamHostu1 = new ArrayList<>();
         seznamHostu1.add(host1);
-        List<Hoste> seznamHostu2 = new ArrayList<>();
+        List<Host> seznamHostu2 = new ArrayList<>();
         seznamHostu2.add(host1);
         seznamHostu2.add(host2);
 
