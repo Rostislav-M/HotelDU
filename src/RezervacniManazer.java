@@ -11,7 +11,7 @@ public class RezervacniManazer {
 
     }
     //Získání seznamu rezervací: getBookings()
-    public List<Rezervace> getSeznamRezervaci() {
+    public List<Rezervace> getBookings() {
         return seznamRezervaci;
     }
 

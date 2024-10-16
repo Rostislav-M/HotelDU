@@ -23,7 +23,7 @@ public class Main {
         System.out.println("\n" + "Počet pracovních pobytů: " + rezervacniManazer.getNumberOfWorkingBookings());
 
         System.out.println(("\n" + "Formátovaný výpis všech rezervací v systému: "));
-        for(Rezervace rezervace : rezervacniManazer.getSeznamRezervaci()){
+        for(Rezervace rezervace : rezervacniManazer.getBookings()){
             System.out.println(rezervace.getFormattedSummary());
         }
 
