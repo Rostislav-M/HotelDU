@@ -5,7 +5,7 @@ import java.util.List;
 public class RezervacniManazer {
 
     private List<Rezervace> seznamRezervaci = new ArrayList<>();
-    //Získání rezervace se zadaným indexe
+    //Získání rezervace se zadaným indexem
     public Rezervace getBooking(int index){ //
         return seznamRezervaci.get(index);
 
