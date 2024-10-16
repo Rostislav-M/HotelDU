@@ -9,7 +9,7 @@ public class Main {
         //hotelDU2engeto();
 
         RezervacniManazer rezervacniManazer = new RezervacniManazer();
-        fillBookings(rezervacniManazer);
+        fillBookings(rezervacniManazer); // Naplnění rezervací
 
         System.out.println("Počet pracovních pobytů: " +rezervacniManazer.getNumberOfWorkingBookings());
         System.out.println("\n" + "Průměrný počet hostů na rezervaci:" +rezervacniManazer.getAverageGuests());
@@ -29,11 +29,59 @@ public class Main {
 
 
 
-
     }
 
-    private static void hotelDU2engeto() {
-        /*
+
+    public static void fillBookings(RezervacniManazer rezervacniManazer) {
+            Host karel = new Host("Karel", "Dvořák", LocalDate.of(1990, 5, 15));
+            //Jiný pan Karel Dvořák
+            Host jinyKarel = new Host("Karel", "Dvořák", LocalDate.of(1979, 1, 3));
+            Host karolina = new Host("Karolína", "Tmavá", LocalDate.of(2000, 11, 3));
+
+            // Vytvoření seznamu hostů
+            List<Host> seznamHostu1 = new ArrayList<>();
+            seznamHostu1.add(karel);
+
+            List<Host> seznamHostu2 = new ArrayList<>();
+            seznamHostu2.add(jinyKarel);
+
+            List<Host> seznamHostu3 = new ArrayList<>();
+            seznamHostu3.add(karolina);
+            seznamHostu3.add(karel);
+
+            List<Host> seznamHostu4 = new ArrayList<>();
+            seznamHostu4.add(karolina);
+
+            // Vytvoření pokojů
+            Pokoj pokoj3 = new Pokoj(3, 2, true, false, BigDecimal.valueOf(2400.0));
+            Pokoj pokoj2 = new Pokoj(2, 2, true, true, BigDecimal.valueOf(1000.0));
+
+            // Karel Dvořák (1. rezervace)
+            Rezervace rezervace1 = new Rezervace(seznamHostu1, pokoj3, LocalDate.of(2023, 6, 1), LocalDate.of(2023, 6, 7), Rezervace.TypPobytu.PRACOVNI);
+            rezervacniManazer.addBooking(rezervace1);
+
+            // jiný Karel Dvořák (2. rezervace)
+            Rezervace rezervace2 = new Rezervace(seznamHostu2, pokoj2, LocalDate.of(2023, 7, 18), LocalDate.of(2023, 7, 21), Rezervace.TypPobytu.REKREACNI);
+            rezervacniManazer.addBooking(rezervace2);
+
+            // Karolína Tmavá (3. rezervace)
+            Rezervace rezervace3 = new Rezervace(seznamHostu3, pokoj3, LocalDate.of(2023, 8, 1), LocalDate.of(2023, 8, 31), Rezervace.TypPobytu.PRACOVNI);
+            rezervacniManazer.addBooking(rezervace3);
+
+            // Smyčka pro 10 dvoudenních rezervací pro srpen
+            int n=0;
+            for(int i=0; i<10; i++) {
+                Rezervace r1_r10 = new Rezervace(seznamHostu4, pokoj2,LocalDate.of(2023,8,1+n), LocalDate.of(2023,8,2+n), Rezervace.TypPobytu.REKREACNI);
+                n=n+2;
+                rezervacniManazer.addBooking(r1_r10);
+            }
+
+
+
+        }
+
+         /* private static void hotelDU2engeto() {
+
         //vytvoření hostů
         Host host1 = new Host("Adéla", "Malíková", LocalDate.of(1993, 3, 13));
         Host host2 = new Host("Jan","Dvořáček", LocalDate.of(1995, 5, 5));
@@ -110,61 +158,8 @@ public class Main {
         System.out.println("**********************************");
         System.out.println(rezervacniManazer.getTopNHolidayBookings(8));
 
-         */
-    }
 
-    public static void fillBookings(RezervacniManazer rezervacniManazer) {
-            Host karel = new Host("Karel", "Dvořák", LocalDate.of(1990, 5, 15));
-            //Jiný pan Karel Dvořák
-            Host jinyKarel = new Host("Karel", "Dvořák", LocalDate.of(1979, 1, 3));
-            Host karolina = new Host("Karolína", "Tmavá", LocalDate.of(2000, 11, 3));
-
-            // Vytvoření seznamu hostů
-            List<Host> seznamHostu1 = new ArrayList<>();
-            seznamHostu1.add(karel);
-
-            List<Host> seznamHostu2 = new ArrayList<>();
-            seznamHostu2.add(jinyKarel);
-
-            List<Host> seznamHostu3 = new ArrayList<>();
-            seznamHostu3.add(karolina);
-            seznamHostu3.add(karel);
-
-            List<Host> seznamHostu4 = new ArrayList<>();
-            seznamHostu4.add(karolina);
-
-            // Vytvoření pokojů
-            Pokoj pokoj3 = new Pokoj(3, 2, true, false, BigDecimal.valueOf(2400.0));
-            Pokoj pokoj2 = new Pokoj(2, 2, true, true, BigDecimal.valueOf(1000.0));
-
-            // Karel Dvořák (1. rezervace)
-            Rezervace rezervace1 = new Rezervace(seznamHostu1, pokoj3, LocalDate.of(2023, 6, 1), LocalDate.of(2023, 6, 7), Rezervace.TypPobytu.PRACOVNI);
-            rezervacniManazer.addBooking(rezervace1);
-
-            // jiný Karel Dvořák (2. rezervace)
-            Rezervace rezervace2 = new Rezervace(seznamHostu2, pokoj2, LocalDate.of(2023, 7, 18), LocalDate.of(2023, 7, 21), Rezervace.TypPobytu.REKREACNI);
-            rezervacniManazer.addBooking(rezervace2);
-
-            // Karolína Tmavá (3. rezervace)
-            Rezervace rezervace3 = new Rezervace(seznamHostu3, pokoj3, LocalDate.of(2023, 8, 1), LocalDate.of(2023, 8, 31), Rezervace.TypPobytu.PRACOVNI);
-            rezervacniManazer.addBooking(rezervace3);
-
-            // Smyčka pro 10 dvoudenních rezervací pro srpen
-            int n=0;
-            for(int i=0; i<10; i++) {
-
-                Rezervace r1_r10 = new Rezervace(seznamHostu4, pokoj2,LocalDate.of(2023,8,1+n), LocalDate.of(2023,8,2+n), Rezervace.TypPobytu.REKREACNI);
-                n=n+2;
-
-                rezervacniManazer.addBooking(r1_r10);
-            }
-
-
-
-        }
-
-
-
+   }*/
 
 
 }

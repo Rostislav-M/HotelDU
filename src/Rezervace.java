@@ -16,11 +16,6 @@ public class Rezervace {
         REKREACNI
     }
 
-   public Host getHost (){
-       return host;
-
-  }
-
 
     public Rezervace(List<Host> seznamHostu, Pokoj pokoj, LocalDate zacatekRezervace, LocalDate konecRezervace, TypPobytu typPobytu) {
         if (seznamHostu== null || seznamHostu.isEmpty())  {
@@ -33,6 +28,10 @@ public class Rezervace {
         this.zacatekRezervace = zacatekRezervace;
         this.konecRezervace = konecRezervace;
         this.typPobytu = typPobytu;
+
+    }
+    public Host getHost (){
+        return host;
 
     }
 
@@ -71,7 +70,7 @@ public class Rezervace {
     public List<Host> getSeznamHostu() {
         return seznamHostu;
     }
-
+    //  Metoda pro získání počtu hostů
     public int getGuestsCount(){
         int pocetHostu=0;
         for(Host host : seznamHostu){
@@ -87,6 +86,7 @@ public class Rezervace {
         }
         this.seznamHostu = seznamHostu;
     }
+    // Metoda pro získání délky rezervace
     public int getBookingLength(){
         return zacatekRezervace.until(konecRezervace).getDays();
     }
@@ -96,22 +96,24 @@ public class Rezervace {
         return totalPrice= pokoj.getCenaPokoje().multiply(BigDecimal.valueOf(getBookingLength()));
     }
 
+    //format pro vypis prvních osm rekreačních rezervací
     public String getFormat(){
         String format = "Rezervace pro:"+getHost().getJmeno() + " " + getHost().getPrijmeni() + " ("
                         + getHost().getDatumNarozeni() + "), " +" na: " + pokoj.getCisloPokoje() +
-                         ", termín " + " " + getZacatekRezervace() + " -" + " " + getKonecRezervace() +
+                         ", termín: " + " " + getZacatekRezervace() + " -" + " " + getKonecRezervace() +
                         ", pracovní pobyt: " + (getTypPobytu().equals(TypPobytu.PRACOVNI) ?  "ano" : "ne");
         return format;
     }
 
+    //Formát pro výpis všech rezervací v systému
     public String getFormattedSummary() {
       String format = getZacatekRezervace() + " až " + getKonecRezervace() + ": "
                     + getHost().getJmeno() + " " + getHost().getPrijmeni() + " ("
                     + getHost().getDatumNarozeni() + ")"
                     +"[" +getGuestsCount()+ ", " + (pokoj.jeVyhledNaMore() ? "ano" : "ne")
-                     + "]" + " za " + getTotalPrice();
+                     + "]" + " za " + getTotalPrice() + " Kč";
 
-        return format;
+      return format;
 
 
     }

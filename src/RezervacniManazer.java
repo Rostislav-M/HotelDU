@@ -5,8 +5,8 @@ import java.util.List;
 public class RezervacniManazer {
 
     private List<Rezervace> seznamRezervaci = new ArrayList<>();
-    //Získání rezervace se zadaným indexem ze seznamu: getBooking(index
-    public Rezervace getBooking(int index){
+
+    public Rezervace getBooking(int index){ // //Získání rezervace se zadaným indexem
         return seznamRezervaci.get(index);
 
     }
@@ -20,7 +20,7 @@ public class RezervacniManazer {
         seznamRezervaci.clear();
     }
 
-    //Vložení nové rezervace do seznamu: addBooking(booking).
+    //Vložení nové rezervace do seznamu
     public void addBooking(Rezervace rezervace) {
        seznamRezervaci.add(rezervace);
 
@@ -31,6 +31,7 @@ public class RezervacniManazer {
             System.out.println("Hosté: " + rezervace.getSeznamHostu() + " " + " pokoj číslo: " + rezervace.getPokoje().getCisloPokoje() + ", Informace o pokoji: " + "Počet lůžek: " + rezervace.getPokoje().getPocetLuzek()+ ", Má balkon: " + (rezervace.getPokoje().jeBalkon() ? "ano" : "ne") +", Má výhled na moře: "+ (rezervace.getPokoje().jeVyhledNaMore() ? "ano" : "ne") + ", Cena pokoje: " + rezervace.getPokoje().getCenaPokoje()+", " + "Pobyt od:  " + rezervace.getZacatekRezervace().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + ", " + "do: " + rezervace.getKonecRezervace().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) + " " + "Typ pobytu: " +rezervace.getTypPobytu());
         }
     }
+    // Získání počtu pracovních rezervací
     public int getNumberOfWorkingBookings() {
         int i=0;
         for (Rezervace rezervace : seznamRezervaci) {
@@ -42,7 +43,7 @@ public class RezervacniManazer {
         return i;
     }
     //  Průměrný počet hostů na rezervaci
-    public double getAverageGuests() {
+    public double getAverageGuests() {   //
         double pocetrezervací=0;
         double soucet=0;
         for (Rezervace rezervace : seznamRezervaci) {
@@ -52,12 +53,13 @@ public class RezervacniManazer {
         return soucet/pocetrezervací;
     }
 
-    public List<Rezervace> getTopNHolidayBookings(int pocetVracenych){
+    //Vrať prvních n rekreačních rezervací
+    public List<Rezervace> getTopNHolidayBookings(int n){
      List<Rezervace> list = new ArrayList<>();
      int pocetRekreacnich=0;
 
         for (Rezervace rezervace : seznamRezervaci) {
-            if(rezervace.getTypPobytu()==Rezervace.TypPobytu.REKREACNI && pocetRekreacnich<pocetVracenych){
+            if(rezervace.getTypPobytu()==Rezervace.TypPobytu.REKREACNI && pocetRekreacnich<n){
                 pocetRekreacnich++;
                 list.add(rezervace);
             }
@@ -70,7 +72,7 @@ public class RezervacniManazer {
     //  celkový počet rezervací sjedním hostem,
     //  celkový počet rezervací se dvěma hosty,
     //  a celkový počet rezervací svíce než dvěma hosty.
-    public void printGuestStatistics(){
+    public void printGuestStatistics(){  //// Výpis statistik hostů
         int jedenHost=0;
         int dvaHoste=0;
         int viceNezDvaHoste=0;
@@ -86,9 +88,9 @@ public class RezervacniManazer {
             }
 
         }
-        System.out.println("Počet rezervací s jedním hostem " + jedenHost);
-        System.out.println("Počet rezervací s dvěma hosty " + dvaHoste);
-        System.out.println("Počet rezervací s více hosty " + viceNezDvaHoste);
+        System.out.println("Počet rezervací s jedním hostem: " + jedenHost);
+        System.out.println("Počet rezervací s dvěma hosty: " + dvaHoste);
+        System.out.println("Počet rezervací s více hosty: " + viceNezDvaHoste);
     }
 
 
