@@ -1,12 +1,14 @@
+import java.math.BigDecimal;
+
 public class Pokoj {
 
     private int cisloPokoje;
     private int pocetLuzek;
     private boolean jeVyhledNaMore;
     private boolean jeBalkon;
-    private double cenaPokoje;
+    private BigDecimal cenaPokoje;
 
-    public Pokoj(int cisloPokoje, int pocetLuzek, boolean jeVyhledNaMore, boolean jeBalkon, double cenaPokoje) {
+    public Pokoj(int cisloPokoje, int pocetLuzek, boolean jeVyhledNaMore, boolean jeBalkon, BigDecimal cenaPokoje) {
         this.cisloPokoje = cisloPokoje;
         this.pocetLuzek = pocetLuzek;
         this.jeVyhledNaMore = jeVyhledNaMore;
@@ -46,11 +48,13 @@ public class Pokoj {
         this.jeBalkon = jeBalkon;
     }
 
-    public double getCenaPokoje() {
+    public BigDecimal getCenaPokoje() {
         return cenaPokoje;
     }
 
-    public void setCenaPokoje(double cenaPokoje) {
+    public void setCenaPokoje(BigDecimal cenaPokoje) {
         this.cenaPokoje = cenaPokoje;
     }
+
+
 }
