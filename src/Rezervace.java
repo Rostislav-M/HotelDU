@@ -99,7 +99,7 @@ public class Rezervace {
     //format pro vypis prvních osm rekreačních rezervací
     public String getFormat(){
         String format = "Rezervace pro:"+getHost().getJmeno() + " " + getHost().getPrijmeni() + " ("
-                        + getHost().getDatumNarozeni() + "), " +" na: " + pokoj.getCisloPokoje() +
+                        + getHost().getDatumNarozeni() + ") " +" na: " + pokoj.getCisloPokoje() +
                          ", termín: " + " " + getZacatekRezervace() + " -" + " " + getKonecRezervace() +
                         ", pracovní pobyt: " + (getTypPobytu().equals(TypPobytu.PRACOVNI) ?  "ano" : "ne");
         return format;
