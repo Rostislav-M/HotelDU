@@ -35,8 +35,7 @@ public class RezervacniManazer {
     public int getNumberOfWorkingBookings() {
         int i=0;
         for (Rezervace rezervace : seznamRezervaci) {
-
-        if(rezervace.getTypPobytu()==Rezervace.TypPobytu.PRACOVNI){
+            if(rezervace.getTypPobytu()==Rezervace.TypPobytu.PRACOVNI){
                 i++;
             }
         }

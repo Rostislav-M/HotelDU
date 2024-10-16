@@ -69,10 +69,10 @@ public class Main {
             rezervacniManazer.addBooking(rezervace3);
 
             // Smyčka pro 10 dvoudenních rezervací pro srpen
-            int n=0;
+            int j=0;
             for(int i=0; i<10; i++) {
-                Rezervace r1_r10 = new Rezervace(seznamHostu4, pokoj2,LocalDate.of(2023,8,1+n), LocalDate.of(2023,8,2+n), Rezervace.TypPobytu.REKREACNI);
-                n=n+2;
+                Rezervace r1_r10 = new Rezervace(seznamHostu4, pokoj2,LocalDate.of(2023,8,1+j), LocalDate.of(2023,8,2+j), Rezervace.TypPobytu.REKREACNI);
+                j=j+2;
                 rezervacniManazer.addBooking(r1_r10);
             }
 
