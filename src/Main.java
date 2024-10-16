@@ -32,7 +32,7 @@ public class Main {
     }
 
 
-    public static void fillBookings(RezervacniManazer rezervacniManazer) {
+    private static void fillBookings(RezervacniManazer rezervacniManazer) {
             Host karel = new Host("Karel", "Dvořák", LocalDate.of(1990, 5, 15));
             //Jiný pan Karel Dvořák
             Host jinyKarel = new Host("Karel", "Dvořák", LocalDate.of(1979, 1, 3));
