@@ -12,7 +12,7 @@ public class Main {
         fillBookings(rezervacniManazer); // Naplnění rezervací
 
         System.out.println("Počet pracovních pobytů: " +rezervacniManazer.getNumberOfWorkingBookings());
-        System.out.println("\n" + "Průměrný počet hostů na rezervaci:" +rezervacniManazer.getAverageGuests());
+        System.out.println("\n" + "Průměrný počet hostů na rezervaci: " +rezervacniManazer.getAverageGuests());
         System.out.println("\n" + "Prvních osm rekreačních rezervací: ");
         List<Rezervace> topHolidayBookings = rezervacniManazer.getTopNHolidayBookings(8);
         for (Rezervace rezervace : topHolidayBookings) {
