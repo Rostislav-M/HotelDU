@@ -71,7 +71,7 @@ public class RezervacniManazer {
     //  celkový počet rezervací sjedním hostem,
     //  celkový počet rezervací se dvěma hosty,
     //  a celkový počet rezervací svíce než dvěma hosty.
-    public void printGuestStatistics(){  //// Výpis statistik hostů
+    public void printGuestStatistics(){  // Výpis statistik hostů
         int jedenHost=0;
         int dvaHoste=0;
         int viceNezDvaHoste=0;
